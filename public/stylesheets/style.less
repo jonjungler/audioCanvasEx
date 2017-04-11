@@ -1,0 +1,131 @@
+@head-height: 120px;
+@body-padding: 20px;
+@list-width: 15%;
+@content-padding: 10px;
+.clear{
+	zoom:1;
+	&:after{
+		content:"";
+		height: 0;
+		visibility: false;
+		display: block;
+		clear: both;
+	}
+}
+
+html,body,div,header,h1,h2,footer,p,ul,li,span,a,dl,dt,dd,
+section,canvas,input,button,form,textarea,select{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	color: #fff;
+	box-sizing: border-box;
+	vertical-align: middle;
+}
+a{
+	text-decoration: none;
+}
+ul,li,ol{
+	list-style: none;
+}
+body {
+  font: 16px "微软雅黑",Georgia,Serif;
+  background: #000;
+  padding: @body-padding;
+}
+
+.borderNormal(){
+	border:1px solid #fff;
+}
+
+.header{
+	margin:0 auto;
+	height: @head-height;
+	text-align: center;
+	.borderNormal();
+}
+
+.canvas-control{
+	border:1px #fff solid;
+	border-radius: 4px;
+	display: inline-block;
+
+	.type-item{
+		padding:5px;
+		float: left;
+		line-height: 20px;
+		&.checked{
+			background:#fff;
+			color:#000;
+		}
+	}
+}
+.volume{
+	margin-bottom: 5px;
+}
+
+#volume-controller{
+	-webkit-appearance: none;
+	background-color: #969696;
+	height: 4px;
+	border-radius: 2px;
+	outline: none;
+	&::-moz-range-track{
+		height: 4px;
+		border-radius: 2px;
+		background: #969696;
+	}
+	&::-moz-range-thumb{
+		border-radius: 50%;
+		border: noen;
+		height: 10px;
+		width: 10px;
+		background: #fff;
+	}
+	&::-webkit-slider-track{
+		height: 4px;
+		border-radius: 2px;
+		background: #969696;
+	}
+	&::-webkit-slider-thumb{
+		-webkit-appearance: none;
+		border-radius: 50%;
+		height: 10px;
+		width: 10px;
+		background: #fff;
+		border: none;
+	}
+}
+
+.content{
+	position: absolute;
+	top: @head-height + @body-padding;
+	bottom: @body-padding;
+	left: @body-padding;
+	right: @body-padding;
+}
+
+.left{
+	width: 33%;
+	margin-right: @content-padding;
+	margin-top: @content-padding;
+	height: calc(~"100% - " @content-padding);
+	float: left;
+	overflow: auto;
+	padding: 5px;
+	.borderNormal();
+	.music-item{
+		text-align: center;
+		&.active{
+			color:#ea2000;
+		}
+	}
+}
+
+.right{
+	width: calc(~"67% - "@content-padding);
+	margin-top: @content-padding;
+	height: calc(~"100% - " @content-padding);
+	float: left;
+	.borderNormal();
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <div class="header">
+    	<h1 class="title"><%= title %></h1>
+    	<div class="volume">Volume <input id="volume-controller" type="range" min="0" max="100" value="50"></div>
+    	
+    	<ul class="canvas-control clear">
+    		<li class="type-item checked">HISTOGRAM</li>
+    		<li class="type-item">DOT</li>
+    		<li class="type-item">DOTCOLOR</li>
+    	</ul>
+    </div>
+    <div class="content">
+	    <div class="left">
+	    	<ul class="music-list">
+	    	<% music.forEach(function(music){%>
+	    		<li class="music-item"><%= music%></li>
+	    	<%})%>
+	    	</ul>
+	    	<div class="log"></div>
+	    </div>
+	    <div class="right">
+	    	<canvas id="music-canvas" ></canvas>
+	    </div>
+    </div>
+    <script type="text/javascript" src="/javascripts/index.js"></script>
+  </body>
+</html>
